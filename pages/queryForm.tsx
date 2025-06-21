@@ -5,10 +5,13 @@ import { useState } from "react";
 export default function QueryFormPage() {
   const [submitted, setSubmitted] = useState(false);
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [query, setQuery] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitted(true);
+    // You can handle form submission logic here (e.g., send to API)
   };
 
   return (
@@ -23,6 +26,8 @@ export default function QueryFormPage() {
               <input
                 type="text"
                 required
+                value={name}
+                onChange={e => setName(e.target.value)}
                 className="w-full border border-gray-300 rounded px-3 py-2"
               />
             </div>
@@ -32,7 +37,7 @@ export default function QueryFormPage() {
                 type="email"
                 required
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={e => setEmail(e.target.value)}
                 className="w-full border border-gray-300 rounded px-3 py-2"
               />
             </div>
@@ -40,6 +45,8 @@ export default function QueryFormPage() {
               <label className="block text-sm font-medium">Your Query</label>
               <textarea
                 required
+                value={query}
+                onChange={e => setQuery(e.target.value)}
                 className="w-full border border-gray-300 rounded px-3 py-2"
               ></textarea>
             </div>
