@@ -94,7 +94,7 @@ export default function LandingPage() {
 
         {/* Card Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
+          {...({ className: "grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8" } as React.HTMLAttributes<HTMLDivElement>)}
           variants={containerVariants}
           initial="hidden"
           animate="visible"
