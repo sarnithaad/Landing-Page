@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ChevronDown } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import Image from 'next/image';
 
 const cardData = [
@@ -19,7 +19,7 @@ const cardData = [
     id: 2,
     image: '/images/meditation.jpg',
     title: 'Lorem ipsum dolor sit amet consectetur.',
-        content: 'Lorem ipsum dolor sit amet consectetur. Nunc gravida consequat faucibus cursus nisl. Nunc molestes molestie a vitae vulputate. Phasellus in pulvinar et vitae. Mi eget lectus nec et. Libero iaculis diam nam mauris a eget. Quam nibh rhoncus rhoncus enim venenatis bibendum.',
+    content: 'Lorem ipsum dolor sit amet consectetur. Nunc gravida consequat faucibus cursus nisl. Nunc molestes molestie a vitae vulputate. Phasellus in pulvinar et vitae. Mi eget lectus nec et. Libero iaculis diam nam mauris a eget. Quam nibh rhoncus rhoncus enim venenatis bibendum.',
     description:
       'Lorem ipsum dolor sit amet consectetur. Nunc gravida consequat faucibus cursus nisl. Nunc molestes molestie a vitae vulputate. Phasellus in pulvinar et vitae. Mi eget lectus nec et. Libero iaculis diam nam mauris a eget. Quam nibh rhoncus rhoncus enim venenatis bibendum.',
     alt: 'Person in white clothing meditating',
@@ -28,7 +28,7 @@ const cardData = [
     id: 3,
     image: '/images/traditional.jpg',
     title: 'Lorem ipsum dolor sit amet consectetur.',
-        content: 'Lorem ipsum dolor sit amet consectetur. Nunc gravida consequat faucibus cursus nisl. Nunc molestes molestie a vitae vulputate. Phasellus in pulvinar et vitae. Mi eget lectus nec et. Libero iaculis diam nam mauris a eget. Quam nibh rhoncus rhoncus enim venenatis bibendum.',
+    content: 'Lorem ipsum dolor sit amet consectetur. Nunc gravida consequat faucibus cursus nisl. Nunc molestes molestie a vitae vulputate. Phasellus in pulvinar et vitae. Mi eget lectus nec et. Libero iaculis diam nam mauris a eget. Quam nibh rhoncus rhoncus enim venenatis bibendum.',
     description:
       'Lorem ipsum dolor sit amet consectetur. Nunc gravida consequat faucibus cursus nisl. Nunc molestes molestie a vitae vulputate. Phasellus in pulvinar et vitae. Mi eget lectus nec et. Libero iaculis diam nam mauris a eget. Quam nibh rhoncus rhoncus enim venenatis bibendum.',
     alt: 'Person in traditional dress against blue sky',
@@ -37,8 +37,8 @@ const cardData = [
     id: 4,
     image: '/images/oranges.jpg',
     title: 'Lorem ipsum dolor sit amet consectetur.',
-        content: 'Lorem ipsum dolor sit amet consectetur. Nunc gravida consequat faucibus cursus nisl. Nunc molestes molestie a vitae vulputate. Phasellus in pulvinar et vitae. Mi eget lectus nec et. Libero iaculis diam nam mauris a eget. Quam nibh rhoncus rhoncus enim venenatis bibendum.',
-description:
+    content: 'Lorem ipsum dolor sit amet consectetur. Nunc gravida consequat faucibus cursus nisl. Nunc molestes molestie a vitae vulputate. Phasellus in pulvinar et vitae. Mi eget lectus nec et. Libero iaculis diam nam mauris a eget. Quam nibh rhoncus rhoncus enim venenatis bibendum.',
+    description:
       'Lorem ipsum dolor sit amet consectetur. Nunc gravida consequat faucibus cursus nisl. Nunc molestes molestie a vitae vulputate. Phasellus in pulvinar et vitae. Mi eget lectus nec et. Libero iaculis diam nam mauris a eget. Quam nibh rhoncus rhoncus enim venenatis bibendum.',
     alt: 'Fresh oranges on tree with green leaves',
   },
@@ -61,7 +61,6 @@ const itemVariants = {
 };
 
 export default function LandingPage() {
-  // Track which card is expanded
   const [openCard, setOpenCard] = useState<number | null>(null);
 
   const handleToggle = (id: number) => {
@@ -73,11 +72,11 @@ export default function LandingPage() {
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <motion.div
-  style={{ marginBottom: "3rem" }}
-  initial={{ opacity: 0, y: -20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8 }}
->
+          style={{ marginBottom: "3rem" }}
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
           <a
             href="#"
             tabIndex={-1}
@@ -85,13 +84,12 @@ export default function LandingPage() {
           >
             Lorem ipsum dolor sit amet
           </a>
-       <h1 className="text-left text-[42px] md:text-5l font-bold text-[#222222] mb-6 uppercase font-roboto-condensed tracking-[-0.02em] leading-tight">
-  LOREM IPSUM DOLOR SIT
-</h1>
-<p className="text-left text-[#222222] max-w-2xl text-base leading-relaxed font-inter">
-  Lorem ipsum dolor sit amet consectetur. Amet sodales sociis facilisis donec dui. Mi porttitor ut aliquam mauris maecenas eget integer in nam. Non nisl iaculis at felis aliquet. Hendrerit tellus at purus lectus.
-</p>
-
+          <h1 className="text-left text-[42px] md:text-5l font-bold text-[#222222] mb-6 uppercase font-roboto-condensed tracking-[-0.02em] leading-tight">
+            LOREM IPSUM DOLOR SIT
+          </h1>
+          <p className="text-left text-[#222222] max-w-2xl text-base leading-relaxed font-inter">
+            Lorem ipsum dolor sit amet consectetur. Amet sodales sociis facilisis donec dui. Mi porttitor ut aliquam mauris maecenas eget integer in nam. Non nisl iaculis at felis aliquet. Hendrerit tellus at purus lectus.
+          </p>
         </motion.div>
 
         {/* Card Grid */}
