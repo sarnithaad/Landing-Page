@@ -107,7 +107,7 @@ export default function LandingPage() {
                 y: -4,
                 transition: { type: 'spring', stiffness: 300, damping: 20 }
               }}
-              className="bg-white shadow-sm hover:shadow-md transition-all duration-300 group rounded-2xl"
+              {...({ className: "bg-white shadow-sm hover:shadow-md transition-all duration-300 group rounded-2xl" } as { className: string })}
             >
               <div className="relative h-48 md:h-56 w-full overflow-hidden rounded-xl">
                 <Image
