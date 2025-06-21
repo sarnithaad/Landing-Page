@@ -1,6 +1,7 @@
 // components/Testimonials.tsx
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+
 const testimonials = [
   {
     icon: (
@@ -45,7 +46,6 @@ const testimonials = [
     name: 'Cameron Williamson',
     avatar: '/images/avatar4.jpg',
   },
-  // New testimonials below
   {
     icon: (
       <svg width="32" height="32" fill="none" stroke="#1976d2" strokeWidth="2" viewBox="0 0 24 24">
@@ -89,6 +89,7 @@ const testimonials = [
     avatar: '/images/avatar8.jpg',
   },
 ];
+
 const VISIBLE_COUNT = 4;
 
 const cardVariants = {
@@ -156,30 +157,31 @@ export default function Testimonials() {
       <div className="flex justify-center mb-16">
         <div className="w-full max-w-6xl flex gap-6">
           {visibleTestimonials.map((t, i) => (
-           <motion.div
-  key={t.name}
-  className="
-    bg-white text-black rounded-lg p-6 shadow transition-transform duration-50
-    flex flex-col h-full min-w-[250px] max-w-[320px] w-full
-    hover:scale-105 hover:shadow-2xl
-    group
-  "
-  whileHover={{ scale: 1.08 }}
-  custom={direction}
-  initial="hidden"
-  animate="visible"
-  exit="exit"
-  variants={cardVariants}
-  transition={{ delay: i * 0.08, type: 'spring', stiffness: 300, damping: 20 }}
->
-  <div className="mb-4">{t.icon}</div>
-  <p className="mb-6 text-base">{t.text}</p>
-  <div className="flex items-center gap-4 mt-auto">
-    <img src={t.avatar} alt={t.name} className="w-10 h-10 rounded-full object-cover" />
-    <span className="font-medium">{t.name}</span>
-  </div>
-</motion.div>
-
+            <motion.div
+              key={t.name}
+              {...({
+                className: `
+                  bg-white text-black rounded-lg p-6 shadow transition-transform duration-50
+                  flex flex-col h-full min-w-[250px] max-w-[320px] w-full
+                  hover:scale-105 hover:shadow-2xl
+                  group
+                `
+              } as { className: string })}
+              whileHover={{ scale: 1.08 }}
+              custom={direction}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              variants={cardVariants}
+              transition={{ delay: i * 0.08, type: 'spring', stiffness: 300, damping: 20 }}
+            >
+              <div className="mb-4">{t.icon}</div>
+              <p className="mb-6 text-base">{t.text}</p>
+              <div className="flex items-center gap-4 mt-auto">
+                <img src={t.avatar} alt={t.name} className="w-10 h-10 rounded-full object-cover" />
+                <span className="font-medium">{t.name}</span>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
