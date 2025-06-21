@@ -4,7 +4,11 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 
+// Updated schema: add name, email, phone
 const schema = z.object({
+  name: z.string().min(1, 'Name is required'),
+  email: z.string().email('Enter a valid email address'),
+  phone: z.string().min(1, 'Phone is required'),
   timeFrame: z.string().min(1, 'Choose Time Frame'),
   size: z.string().min(1, 'Choose Size'),
   quantity: z.string().min(1, 'Choose Quantity'),
@@ -38,6 +42,7 @@ export default function QuoteForm() {
               <input
                 {...register('name')}
                 className="w-full border px-4 py-2 rounded text-gray-800 placeholder-gray-400"
+                placeholder="Your Name"
               />
               {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
             </div>
@@ -46,6 +51,7 @@ export default function QuoteForm() {
               <input
                 {...register('email')}
                 className="w-full border px-4 py-2 rounded text-gray-800 placeholder-gray-400"
+                placeholder="you@example.com"
               />
               {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
             </div>
@@ -58,6 +64,7 @@ export default function QuoteForm() {
               <input
                 {...register('phone')}
                 className="w-full border px-4 py-2 rounded text-gray-800 placeholder-gray-400"
+                placeholder="Your Phone Number"
               />
               {errors.phone && <p className="text-red-500 text-sm">{errors.phone.message}</p>}
             </div>
