@@ -1,11 +1,11 @@
-// FeedbackPage.jsx
+// FeedbackPage.tsx
 import React, { useState } from 'react';
 
 export default function FeedbackPage() {
   const [feedback, setFeedback] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitted(true);
   };
