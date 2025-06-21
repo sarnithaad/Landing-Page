@@ -73,7 +73,7 @@ export default function LandingPage() {
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <motion.div
-  className="mb-12"
+  style={{ marginBottom: "3rem" }}
   initial={{ opacity: 0, y: -20 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.8 }}
